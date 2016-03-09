@@ -5,12 +5,38 @@ By: Ward Prescott
 
 ## Class
 ###Constructor
+`LMP91200(int cs)` The only argument is the chipselect pin for the device.  This is pin ??? on the HydroSense Sonde.
 
 ### Methods
-.begin()
-.setPGA()
-.setVCM()
-.setVOCM()
+- `.begin(void)` is used start the SPI bus with the correct settings.  Note that the LMP91200 uses SPI mode 3, though most other TI devices use SPI mode 1.
+
+- `.setPGA(int PGASet)` is used to set the programmable gain amplifier internal to the AFE.  Arguments are:
+
+| Argument | Description |
+|--------|--------|
+|      PGA5 |  5 Volts/Volt (DEFAULT)      |
+|PGA10 | 10 Volts/Volt|
+
+- `.setVCM(int VCOMSet)` is used to set the reference voltage offset.  This setting can be changed if the PH range is within known values that are skewed to acidic or basic.  Arguments are:
+
+
+| Argument | Description |
+|--------|--------|
+|     VCM_78  |  Common mode voltage at 7/8 Vcc   |
+|     VCM_34  |  Common mode voltage at 3/4 Vcc   |
+|     VCM_58  |  Common mode voltage at 5/8 Vcc   |
+|     VCM_12  |  Common mode voltage at 1/2 Vcc (DEFAULT)   |
+|     VCM_38  |  Common mode voltage at 3/8 Vcc   |
+|     VCM_14  |  Common mode voltage at 1/4 Vcc   |
+|     VCM_18  |  Common mode voltage at 1/8 Vcc   |
+
+
+- `.setVOCM(int VOCMSet)` is used to select between differential or singled ened output.  Arguments are:
+
+| Argument | Description |
+|--------|--------|
+|      VOCM_VOCM  |  Differential output (DEFAULT)      |
+|VOCM_GND | Singled ended output |
 ### Parameters
 The class has no public parameters.
 ##Usage

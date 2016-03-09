@@ -12,6 +12,7 @@ void LMP91200::begin(){
 	SPI.begin();
 	SPI.beginTransaction(SPISettings(4000000, MSBFIRST, SPI_MODE3));
 	pinMode(_cs, OUTPUT);
+	digitalWrite(_cs, HIGH);
 }
 
 boolean LMP91200::setPGA(uint16_t PGASet){

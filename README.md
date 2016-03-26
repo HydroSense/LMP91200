@@ -1,11 +1,11 @@
 # LMP91200
 The official HydroSense library for the TI LMP91200 PH frontend.
-Updated: Mar 8, 2016 11:24 AM
+Updated: March 26, 2016 7:37 PM
 By: Ward Prescott
 
 ## Class
 ###Constructor
-`LMP91200(int cs)` The only argument is the chipselect pin for the device.  This is pin ??? on the HydroSense Sonde.
+`LMP91200(int cs)` The only argument is the chipselect pin for the device.
 
 ### Methods
 - `.begin(void)` is used start the SPI bus with the correct settings.  Note that the LMP91200 uses SPI mode 3, though most other TI devices use SPI mode 1.
